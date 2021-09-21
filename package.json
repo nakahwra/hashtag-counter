@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@types/twitter-stream-channels": "^1.0.4",
+    "mongodb": "^4.1.2",
     "twitter-stream-channels": "^1.0.1"
   }
 }
