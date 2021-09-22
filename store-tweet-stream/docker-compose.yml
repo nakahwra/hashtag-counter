@@ -7,7 +7,7 @@ services:
       - PUID=1000
       - PGID=1000
     volumes:
-      - /home/barry/mongodb/database:/data/db
+      - /home/nakahara/big-data/twitter-hashtags/store-tweet-stream/database:/data/db
     ports:
       - 27017:27017
     restart: unless-stopped
