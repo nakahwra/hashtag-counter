@@ -63,4 +63,4 @@ python3 main.py
 Os tweets armazenados no banco serão processados e usados para gerar o gráfico das dez linguagens mais populares com base na frequência de uso de suas hashtags. O resultado pode ser visualizado pela imagem gerada na pasta raíz do projeto `barh-languages.png` ou através de uma tabela no retorno do script pelo terminal.
 
 ---
-🚀 Desenvolvido por Lucas Nakahara, Gabriel Rodrigues e Enrico Secco
+🚀 Desenvolvido por **Lucas Nakahara**, **Gabriel Rodrigues** e **Enrico Secco**
