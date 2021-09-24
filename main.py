@@ -25,7 +25,7 @@ for keywords_list in keywords:
   for keyword in all_keywords:
     keywords_dict[keyword] = keywords_dict[keyword] + 1 if keyword in keywords_dict else 1
 
-top_languages = pd.DataFrame(keywords_dict.items(), columns=['language', 'count'])
+top_languages = pd.DataFrame(keywords_dict.items(), columns=['language', 'count']).head(10)
 
 top_languages.rename(columns={"count": "Quantidade de tweets"}) \
                 .sort_values(by=["Quantidade de tweets"]) \
@@ -38,6 +38,8 @@ top_languages.rename(columns={"count": "Quantidade de tweets"}) \
                 ) \
 
 plt.savefig('barh-languages')
+print("\nTop 10 linguagens mais populares no Twitter")
+print(top_languages)
 
 # count = 0
 # while count < 10:
