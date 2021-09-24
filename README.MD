@@ -15,7 +15,7 @@ Simples projeto para recuperar e processar tweets que contenham determinadas has
 ## Configuração
 Clone o projeto e acesse o diretório:
 ```
-git clone git@github.com:nakahwra/hashtag_counter.git
+git clone git@github.com:nakahwra/hashtag-counter.git
 cd hastag_counter
 ```
 ### Tweet Stream
