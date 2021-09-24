@@ -15,9 +15,29 @@ spark = pyspark.sql.SparkSession \
 tweets_df = spark.read.format("com.mongodb.spark.sql.DefaultSource").load()
 
 tweets_df.createOrReplaceTempView('tweets')
-resDf = spark.sql('select keywords from tweets')
-resDf.show()
-spark.stop()
+keywords = spark.sql('select keywords from tweets').collect()
+
+keywords_dict = dict()
+
+for keywords_list in keywords:
+  all_keywords = keywords_list.keywords
+  # print(all_keywords)
+  for keyword in all_keywords:
+    keywords_dict[keyword] = keywords_dict[keyword] + 1 if keyword in keywords_dict else 1
+
+top_languages = pd.DataFrame(keywords_dict.items(), columns=['language', 'count'])
+
+top_languages.rename(columns={"count": "Quantidade de tweets"}) \
+                .sort_values(by=["Quantidade de tweets"]) \
+                .plot(
+                    figsize=(15,7),
+                    kind="barh", \
+                    title="Linguagens de programação mais populares no Twitter", \
+                    x="language", \
+                    xlabel="Linguagem", \
+                ) \
+
+plt.savefig('barh-languages')
 
 # count = 0
 # while count < 10:
